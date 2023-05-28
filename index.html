@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/w3.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/index_style.css"/>
+</head>
+<body class="fondo">
+  <header>
+    <div class="titulo">
+      <h1>Hypebeast Streetwear</h1>
+    </div>
+  </header>
+  <nav>
+    <ul class="menu_movil menu_drop">
+      <li>
+        <a href="#menu" class="size_icon"> <i class="fa fa-bars"></i></a>
+        <ul>
+          <li><a href="#quest.html">Quest</a></li>
+          <li><a href="#page1.html">Palace</a></li>
+          <li><a href="#page2.html">Supreme</a></li>
+          <li><a href="#home.html">Stussy</a></li>
+          <li><a href="#gallery.html">Bape</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <ul class="menu_pc menu_drop">
+    <li class="col-2 col-s-4"><a href="index.html">HOME</a></li>
+    <li class="col-2 col-s-4"><a href="page1.html"><img class="img" src="images/folder page1/palace.png" alt="palace"/></a></li>
+    <li class="col-2 col-s-4"><a href="page2.html"><img class="img" src="images/folderindex/supreme.png" alt="supreme"/></a></li>
+    <li class="col-2 col-s-4"><a href="home.html"><img class="img" src="images/folderindex/stussy.png" alt="stussy"/></a></li>
+    <li class="col-2 col-s-4"><a href="gallery.html"><img class="img" src="images/folderindex/bape.png" alt="bape"/></a></li>  
+    <li class="col-2 col-s-4"><a href="quest.html"><img class="img" src="images/descarga.png" alt="indice"/></a></li>
+  </ul>
+  <div class="logocontainer">
+    <h1>The world of clothing and fashion is linked to that of money, either directly or indirectly where there are a lot of different brands and types of clothes, but here we talk about the most exclusive and hard to find clothes. One of the best and most expensive brands is "Supreme".</h1>
+    <img class="col-6 col-s-6" src="images/folderindex/yeezy.png" width="700" height="500"/>
+    <iframe class="col-6 col-s-6" width="700" height="500" src="https://www.youtube.com/embed/TpwChyyyy4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <br/>
+  <div class="col-2 col-s-6"> <img class="footer" src="images/footer.png" alt="footer"/></div>
+  <button onclick="topFunction()" style="position:fixed; bottom:20px; right:30px;">Go Up</button>
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "data.xml", true);
+  xmlhttp.send();
+
+  function myFunction(xml) {
+    var x, i, xmlDoc, table;
+    xmlDoc = xml.responseXML;
+    table = "<tr><th>Brand</th><th>Description</th></tr>";
+    x = xmlDoc.getElementsByTagName("brand");
+    for (i = 0; i < x.length; i++) {
+      var name = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+      var description = x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+
+      table += "<tr><td>" + name + "</td><td>" + description + "</td></tr>";
+    }
+    document.getElementById("clothingTable").innerHTML = table;
+  }
+</script>
+<table id="clothingTable" border="1">
+</table>
+</body>
+</html>
