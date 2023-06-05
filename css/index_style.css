@@ -29,10 +29,14 @@
     
     footer{
         width: 20%;
-
         text-align: center;
         align-items: center;
     } 
+
+   .clothinTable{
+      align-items: center;
+      text-align: center;
+    }
     
     .footimg{
         width: 40%;
