@@ -1,0 +1,6 @@
+<!DOCTYPE clothing [
+    <!ELEMENT clothing (brand+)>
+    <!ELEMENT brand (name, description)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+]>
