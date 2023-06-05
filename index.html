@@ -41,34 +41,6 @@
   </div>
   <br/>
   <button onclick="topFunction()" style="position:fixed; bottom:20px; right:30px;">Go Up</button>
-  <script>
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
 
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "data.xml", true);
-  xmlhttp.send();
-
-  function myFunction(xml) {
-    var x, i, xmlDoc, table;
-    xmlDoc = xml.responseXML;
-    table = "<tr><th>Brand</th><th>Description</th></tr>";
-    x = xmlDoc.getElementsByTagName("brand");
-    for (i = 0; i < x.length; i++) {
-      var name = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-      var description = x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
-
-      table += "<tr><td>" + name + "</td><td>" + description + "</td></tr>";
-    }
-    document.getElementById("clothingTable").innerHTML = table;
-  }
-</script>
 </body>
 </html>
