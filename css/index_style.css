@@ -33,7 +33,12 @@
         align-items: center;
     } 
 
-   .PP{
+   .tablaxml{
+      align-items: center;
+      text-align: center;
+    }
+
+    .tablaxml{
       align-items: center;
       text-align: center;
     }
